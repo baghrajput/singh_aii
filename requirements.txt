@@ -11,3 +11,4 @@ aiohttp
 ollama
 gtts
 psycopg2-binary
+torch
