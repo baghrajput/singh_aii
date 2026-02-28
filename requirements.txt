@@ -9,6 +9,4 @@ jinja2
 python-multipart
 aiohttp
 ollama
-gtts
 psycopg2-binary
-torch
