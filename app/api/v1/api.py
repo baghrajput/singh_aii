@@ -66,8 +66,10 @@ async def process_call_audio(file: UploadFile = File(...), phone_number: str = "
         # 6. TTS: Text to Speech response in detected language
         audio_response_path = await tts_service.generate_speech(text_response, lang=detected_language) 
 
-        # 7. Generate Call Summary (simple for now, could be LLM-generated)
-        call_summary = f"Call from {caller_info.get(\'name\')} ({phone_number}). Issue: {issue_type}, Urgency: {classification.get(\'urgency\')}. Action: {action_taken}. Sentiment: {sentiment}."
+        # # 7. Generate Call Summary (simple for now, could be LLM-generated)
+        # call_summary = f"Call from {caller_info.get(\'name\')} ({phone_number}). Issue: {issue_type}, Urgency: {classification.get(\'urgency\')}. Action: {action_taken}. Sentiment: {sentiment}."
+
+        call_summary = "Call from " + str(caller_info.get("name")) + " (" + phone_number + "). Issue: " + str(issue_type) + ", Urgency: " + str(classification.get("urgency")) + ". Action: " + action_taken + ". Sentiment: " + sentiment + "."
 
         # 8. CRM Logging and CallLog storage
         await mocks.crm_log_call(mocks.CRMLogCallRequest(
