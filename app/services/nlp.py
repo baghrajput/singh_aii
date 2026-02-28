@@ -28,7 +28,7 @@ class NLPService:
         
         try:
             # Real Ollama API Call
-            response = self.client.generate(model=self.model, prompt=prompt, format=\'json\')
+            response = self.client.generate(model=self.model, prompt=prompt, format='json')
             json_output = json.loads(response[\'response\'])
             return json_output
 
