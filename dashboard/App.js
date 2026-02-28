@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+from pydantic import BaseModel
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const API_BASE_URL = 'http://localhost:8000/api/v1'; // Assuming backend runs on port 8000
