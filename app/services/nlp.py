@@ -6,7 +6,7 @@ from app.core.config import settings
 class NLPService:
     def __init__(self):
         self.client = ollama.Client(host=settings.OLLAMA_HOST)
-        self.model = settings.LLM_MODEL_NAME
+        self.model = settings.LLM_MODEL_NAMEjson_output = json.loads(response[\'response\'])
 
     async def classify_intent(self, text: str) -> Dict[str, Any]:
         """
@@ -29,7 +29,8 @@ class NLPService:
         try:
             # Real Ollama API Call
             response = self.client.generate(model=self.model, prompt=prompt, format='json')
-            json_output = json.loads(response[\'response\'])
+            # json_output = json.loads(response[\'response\'])
+            json_output = json.loads(response['response'])
             return json_output
 
         except Exception as e:
