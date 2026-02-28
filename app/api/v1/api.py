@@ -4,6 +4,7 @@ from app.services.asr import asr_service
 from app.services.nlp import nlp_service
 from app.services.tts import tts_service
 from app.services.dispatcher import dispatcher_engine
+from pydantic import BaseModel
 from app.services.use_cases import use_case_handler
 from app.database import get_db, CallLog
 from sqlalchemy.orm import Session
